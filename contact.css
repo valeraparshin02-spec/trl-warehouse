@@ -1,0 +1,24 @@
+.contact-fields a{font-size:clamp(16px,1.5vw,24px);font-weight:500;overflow-wrap:anywhere;text-underline-offset:6px}
+.contact-fields a:hover{text-decoration:underline}
+.contact-fields [hidden]{display:none!important}
+.contact-dialog{border:0;padding:0;max-width:calc(100vw - 32px);width:520px;background:#f9fbf9;color:#143d32;box-shadow:0 24px 100px #00191280}
+.contact-dialog::backdrop{background:#001c18b8;backdrop-filter:blur(6px)}
+.contact-dialog-inner{position:relative;padding:48px 38px 35px}
+.contact-dialog h2{font-size:38px;font-weight:500;line-height:1.12;letter-spacing:-.055em;margin:0 30px 28px 0}
+.contact-dialog-close{position:absolute;top:15px;right:15px;width:40px;height:40px;border:0;background:transparent;color:#143d32;font-size:27px;line-height:1}
+.contact-dialog-options{display:grid;gap:10px}
+.contact-choice{display:flex;justify-content:space-between;gap:20px;align-items:center;border:1px solid #c3d8c9;padding:21px 20px;color:#143d32;background:#edf3ec}
+.contact-choice:hover{background:#d9efdf}
+.contact-choice>span:first-child{display:grid;gap:6px;min-width:0}
+.contact-choice b{font-size:18px;font-weight:600}
+.contact-choice small{font-size:12px;overflow-wrap:anywhere}
+.contact-choice .contact-arrow{font-size:23px;flex-shrink:0}
+.contact-dialog-note{font-size:12px;color:#526d5e;line-height:1.7;margin:20px 0 0}
+@media(max-width:760px){
+ .contact-fields>div{gap:18px;flex-wrap:wrap}
+ .contact-fields a{font-size:17px}
+ .contact-dialog-inner{padding:48px 24px 28px}
+ .contact-dialog h2{font-size:32px}
+ .contact-choice{padding:18px 15px;gap:12px}
+ .contact-choice b{font-size:16px}
+}
