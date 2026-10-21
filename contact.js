@@ -2,7 +2,6 @@
 (() => {
   const config = {
     email: 'operator@trl-expert.ru',
-    phone: '',
     max: ''
   };
   // Tilda's native contact block may provide the same values without code editing.
@@ -13,9 +12,12 @@
       if (field) config[key] = field.textContent.trim();
     }
   }
+  const phoneChannels = Array.from(document.querySelectorAll('.contact-fields a[href^="tel:"]')).map(a => ({
+    id:'phone', label:'Позвонить · '+a.dataset.contactName, caption:a.textContent.trim(), href:a.getAttribute('href')
+  }));
   const channels = [
     {id:'email',label:'Написать на почту',caption:config.email,href:config.email ? 'mailto:'+config.email : ''},
-    {id:'phone',label:'Позвонить',caption:config.phone,href:config.phone ? 'tel:'+config.phone.replace(/[^\d+]/g,'') : ''},
+    ...phoneChannels,
     {id:'max',label:'Написать в MAX',caption:'Открыть переписку',href:/^https:\/\/(?:www\.)?max\.ru\//i.test(config.max) ? config.max : ''}
   ].filter(channel => channel.href);
   const dialog = document.querySelector('#contact-dialog');

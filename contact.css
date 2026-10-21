@@ -1,6 +1,10 @@
 .contact-fields a{font-size:clamp(16px,1.5vw,24px);font-weight:500;overflow-wrap:anywhere;text-underline-offset:6px}
 .contact-fields a:hover{text-decoration:underline}
 .contact-fields [hidden]{display:none!important}
+.contact-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 36px}
+.contact-fields>div:first-child{grid-column:1/-1}
+.contact-fields a[href^="tel:"]{white-space:nowrap}
+.contact-dialog{max-height:calc(100svh - 32px);overflow-y:auto;overscroll-behavior:contain}
 .contact-dialog{border:0;padding:0;max-width:calc(100vw - 32px);width:520px;background:#f9fbf9;color:#143d32;box-shadow:0 24px 100px #00191280}
 .contact-dialog::backdrop{background:#001c18b8;backdrop-filter:blur(6px)}
 .contact-dialog-inner{position:relative;padding:48px 38px 35px}
@@ -15,6 +19,7 @@
 .contact-choice .contact-arrow{font-size:23px;flex-shrink:0}
 .contact-dialog-note{font-size:12px;color:#526d5e;line-height:1.7;margin:20px 0 0}
 @media(max-width:760px){
+ .contact-fields{grid-template-columns:1fr}
  .contact-fields>div{gap:18px;flex-wrap:wrap}
  .contact-fields a{font-size:17px}
  .contact-dialog-inner{padding:48px 24px 28px}
